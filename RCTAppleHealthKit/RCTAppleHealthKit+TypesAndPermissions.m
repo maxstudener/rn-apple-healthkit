@@ -58,9 +58,9 @@
         return [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierNikeFuel];
     }
     
-//    if ([@"AppleExerciseTime" isEqualToString: key]) {
-//        return [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierAppleExerciseTime];
-//    }
+   if ([@"AppleExerciseTime" isEqualToString: key]) {
+       return [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierAppleExerciseTime];
+   }
     
     // Nutrition Identifiers
     if ([@"DietaryEnergy" isEqualToString: key]) {
@@ -94,6 +94,8 @@
     if ([@"MindfulSession" isEqualToString: key] && systemVersion >= 10.0) {
         return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierMindfulSession];
     } else if ([@"MindfulSession" isEqualToString: key]){
+        return [HKObjectType workoutType];
+    }else if ([@"Workout" isEqualToString: key]) {
         return [HKObjectType workoutType];
     }
     
